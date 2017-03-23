@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane style="-fx-background-image: url('E:\Desarollo\DAD\workspace\MenuJuego\img\giffondo.gif');" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <Pane BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="131.0" layoutY="88.0" prefHeight="231.0" prefWidth="159.0">
+               <children>
+                  <JFXButton fx:id="newGameButton" buttonType="RAISED" onAction="#onNewGameAction" prefHeight="59.0" prefWidth="217.0" ripplerFill="#009688" style="-fx-border-color: #77c2bb;" text="New Game">
+                     <tooltip>
+                        <Tooltip text="Empezar Nueva Partida" />
+                     </tooltip></JFXButton>
+                  <JFXButton fx:id="salirButton" buttonType="RAISED" layoutX="10.0" layoutY="69.0" onAction="#onSalirAction" prefHeight="64.0" prefWidth="196.0" ripplerFill="#009688" style="-fx-border-color: #77c2bb;" text="Salir">
+                     <tooltip>
+                        <Tooltip text="Terminar" />
+                     </tooltip></JFXButton>
+                  <ImageView fitHeight="59.0" fitWidth="200.0">
+                     <image>
+                        <Image url="@../../../img/letras.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <JFXToggleButton fx:id="soundToggle" layoutY="379.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#soundToggleAction" prefHeight="58.0" prefWidth="117.0" text="Sound" textOverrun="WORD_ELLIPSIS" unToggleColor="#f58282" unToggleLineColor="#c92f2f" />
+            <ImageView fitHeight="62.0" fitWidth="73.0" layoutX="174.0" layoutY="14.0">
+               <image>
+                  <Image url="@../../../img/giffondo.png" />
+               </image>
+            </ImageView>
+            <Separator layoutX="17.0" layoutY="378.0" prefHeight="13.0" prefWidth="415.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Separator>
+            <JFXDialog />
+            <ImageView layoutX="372.0" layoutY="319.0">
+               <image>
+                  <Image url="@../../../img/key.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <Blend />
+         </effect>
+      </Pane>
+   </center>
+   <top>
+      <HBox prefHeight="40.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar prefHeight="30.0" prefWidth="450.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Game">
+                  <items>
+                    <MenuItem accelerator="Shortcut+N" mnemonicParsing="false" onAction="#onNewGameAction" text="New Game">
+                           <graphic>
+                              <ImageView>
+                                 <image>
+                                    <Image url="@../../../img/more.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem accelerator="Shortcut+M" mnemonicParsing="false" text="Mute Sound">
+                           <graphic>
+                              <ImageView>
+                                 <image>
+                                    <Image url="@../../../img/mute.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></MenuItem>
+                  </items>
+                </Menu>
+                  <Menu accelerator="Shortcut+I" mnemonicParsing="false" text="Info">
+                    <items>
+                      <MenuItem accelerator="Shortcut+A" mnemonicParsing="false" onAction="#onAutoresAction" text="Autores">
+                           <graphic>
+                              <ImageView>
+                                 <image>
+                                    <Image url="@../../../img/info.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></MenuItem>
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
